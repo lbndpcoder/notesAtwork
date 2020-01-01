@@ -89,3 +89,14 @@ git checkout dev
 
 
 
+比如说我现在在remote端已经有了一个库，通过 git clone 到本地之后，在本地生成一个分支，然后再分支上进行修改某个文件：
+
+```shell
+git clone 
+git checkout -b new_branch
+git add xxx.py
+git commit -m "change xxx.py"
+git push origin new_branch
+```
+
+这样在远程就会存在一个相同的分支；
