@@ -1,2 +1,3 @@
 用来记录在工作中学习到的知识：
-1. git 的使用；
+1. toolNotes/git 的使用；
+2. statices/beta Distribution;
