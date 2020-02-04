@@ -6,7 +6,7 @@
 
 ​	Client 构建 <u>计算图</u> ，通过这个 Client 可以利用不同的语言构建出计算图，算是最接近使用者的一层前端的东西了，如下图所示为（图片来自《TensorFlow 内核剖析》作者：刘光聪）：
 
-<img src="/Users/liubonan/Pictures/tensorflow架构图.png" alt="tensorflow架构图" style="zoom:50%;" />
+<img src="./tensorflow架构图.png" alt="tensorflow架构图" style="zoom:50%;" />
 
 > In a TensorFlow graph, each *node* has zero or more inputs and zero or more outputs, and represents the instantiation of an *operation*.
 >
@@ -36,13 +36,13 @@ for step in xrange(0, 10):
 
 ​	其中的 w，x，b便是输入的参数，通过每一个节点的OP操作最终输出，这个整体便构成了一个计算图，而 Client 的作用便是构建这个计算图，包含变量的定义。当数据输入的时候，便开始按照计算图的定义开始运转。
 
-<img src="/Users/liubonan/Pictures/graph.png" alt="graph" style="zoom:50%;" />
+<img src="./graph.png" alt="graph" style="zoom:50%;" />
 
 > Clients programs interact with the TensorFlow system by creating a *Session*.
 
 ​	Client 通过 Session 来和“后端”建立起联系，从而运行整个计算图。在单机单卡的情况下如下图所示工作，在一个机器的一个进程上上存在 master 和 worker 。
 
-<img src="/Users/liubonan/Pictures/Single-Process.png" alt="Single-Process" style="zoom:50%;" />
+<img src="./Single-Process.png" alt="Single-Process" style="zoom:50%;" />
 
 > Once a system has multiple devices, there are two main complications: deciding which device to place the com- putation for each node in the graph, and then managing the required communication of data across device bound- aries implied by these placement decisions. This subsec- tion discusses these two issues.
 
@@ -51,7 +51,7 @@ for step in xrange(0, 10):
 - 将计算图分配给不同的设备；
 - 设备之间的通信问题；
 
-<img src="/Users/liubonan/Pictures/multiple process.png" alt="multiple process" style="zoom:50%;" />
+<img src="./multiple process.png" alt="multiple process" style="zoom:50%;" />
 
 
 
@@ -61,7 +61,7 @@ for step in xrange(0, 10):
 
 ​	如何处理设备之间的通信问题，就是如果存在子图之间的节点需要相互传输数据的时候那么此时在需要发送数据的节点上添加新的 send 节点，在需要接收数据的部分添加 recieve 节点，如下图所示：
 
-<img src="/Users/liubonan/Pictures/communication.png" alt="communication" style="zoom:50%;" />
+<img src="./communication.png" alt="communication" style="zoom:50%;" />
 
 ​	上面主要阐述了在单机多卡的情况下如何构建一个计算图，并将一个完整的图如何分配到不同的设备进行工作并完成设备之间的信息传输的。总的来说：
 
@@ -74,7 +74,7 @@ for step in xrange(0, 10):
 
 
 
-<img src="/Users/liubonan/Downloads/mulGPU.png" alt="mulGPU" style="zoom: 33%;" />
+<img src="./mulGPU.png" alt="mulGPU" style="zoom: 33%;" />
 
 
 
