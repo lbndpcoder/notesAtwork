@@ -96,8 +96,6 @@ for step in xrange(0, 10):
 - parameter server ：负责更新参数；
 - worker：计算梯度；
 
-
-
 <img src="./ps架构.png" alt="ps架构" style="zoom:50%;" />
 
 ​		
