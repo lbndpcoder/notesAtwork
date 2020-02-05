@@ -98,7 +98,7 @@ for step in xrange(0, 10):
 
 
 
-<img src="/Users/liubonan/repo/notesAtwork/tensorflowNotes/distributedTf/ps架构.png" alt="ps架构" style="zoom:50%;" />
+<img src="./ps架构.png" alt="ps架构" style="zoom:50%;" />
 
 ​		
 
