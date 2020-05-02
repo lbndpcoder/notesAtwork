@@ -1,0 +1,10 @@
+{
+    "python.pythonPath": "/Users/liubonan/opt/anaconda3/envs/tfOne/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "code-runner.executorMap": {
+
+    "python":"set set PYTHONIOENCODING=utf-8 && /Users/liubonan/opt/anaconda3/envs/tfOne/bin/python"
+    }
+}
